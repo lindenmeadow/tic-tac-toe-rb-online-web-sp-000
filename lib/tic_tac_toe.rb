@@ -21,13 +21,12 @@ def input_to_index(user_input)
   user_input.to_i - 1
 end
 
-<<<<<<< HEAD
 def move(board, index, player)
   board[index] = player
-=======
+end
+
 def move(board, index, current_player = "X")
   board[index] = current_player
->>>>>>> 8c32ddabfd259e64c66b4df255de2daafb3a12c2
 end
 
 def position_taken?(board, index)
@@ -39,29 +38,16 @@ def valid_move?(board, index)
 end
 
 def turn(board)
-<<<<<<< HEAD
   puts 'Please enter 1-9:'
   user_input = gets.strip
   index = input_to_index(user_input)
   if valid_move?(board, index)
     move(board, index, current_player(board))
-=======
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index = input_to_index(input)
-  if valid_move?(board, index)
-    move(board, index)
->>>>>>> 8c32ddabfd259e64c66b4df255de2daafb3a12c2
-    display_board(board)
   else
     turn(board)
   end
 end
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 8c32ddabfd259e64c66b4df255de2daafb3a12c2
 def turn_count(board)
   counter = 0
   board.each do |count|
@@ -111,7 +97,6 @@ def winner(board)
 end
 
 def play(board)
-<<<<<<< HEAD
   turn(board) until over?(board)
   if won?(board)
     if winner(board) == "X"
@@ -121,11 +106,5 @@ def play(board)
     end
   elsif draw?(board)
     puts "Cat's Game!"
-=======
-  counter = 0
-  until counter == 9
-    turn(board)
-    counter += 1
->>>>>>> 8c32ddabfd259e64c66b4df255de2daafb3a12c2
   end
 end
